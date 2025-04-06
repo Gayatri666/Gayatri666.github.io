@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Contact form - show alert on submit
+   
     document.querySelector('.contact-form form')?.addEventListener('submit', e => {
         e.preventDefault();
         alert('Your message has been sent successfully!');
         e.target.reset();
     });
 
-    // Resume download
+    
     document.querySelector('.resume-link')?.addEventListener('click', e => {
         e.preventDefault();
         const link = document.createElement('a');
-        link.href = 'path/to/your/resume.pdf'; // Replace with actual path
+        link.href = 'path/to/your/resume.pdf'; 
         link.download = 'Gayatri_Resume.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
     });
 
-    // Scroll animations
+   
     const animateOnScroll = () => {
         document.querySelectorAll('.skill-box, .project').forEach(el => {
             el.style.opacity = el.getBoundingClientRect().top < window.innerHeight - 100 ? '1' : '0';
@@ -31,13 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
 
-    // Project hover effects
+   
     document.querySelectorAll('.project').forEach(project => {
         project.onmouseenter = () => project.style.transform = 'scale(1.03)';
         project.onmouseleave = () => project.style.transform = 'scale(1)';
     });
 
-    // Mobile menu toggle
     const menu = document.querySelector('.box2 ul');
     const toggle = document.createElement('div');
     toggle.innerHTML = '☰';
